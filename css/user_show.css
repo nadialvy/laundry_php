@@ -1,0 +1,40 @@
+
+th, td{
+    text-align: center;
+}
+
+button{
+    border: none;
+    padding: 6px 14px;
+    border-radius: 5px;
+    margin-right: 3px;
+}
+
+.submit{
+    background-color: #5EEB8E;
+}
+
+.submit:hover{
+    background-color: #4CD97C;
+}
+
+.update{
+    background-color: #B4D1FF;
+}
+
+.update:hover{
+    background-color: #A4C5F6;
+}
+
+.delete{
+    background-color: #FFA0A0;
+}
+
+.delete:hover{
+    background-color: #FF8585;
+}
+
+.cont-button{
+    display: flex;
+    justify-content: center;
+}
