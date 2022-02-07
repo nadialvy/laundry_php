@@ -43,6 +43,13 @@
                 </a>
               </li>
 
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="user_index.php">
+                  <i class="ni ni-single-02 text-yellow"></i>
+                  <span class="nav-link-text">User Data</span>
+                </a>
+              </li> -->
+
               <li class="nav-item">
                 <a class="nav-link" href="packet_index.php">
                   <i class="fas fa-cube" style="color: #11CDEF;"></i>

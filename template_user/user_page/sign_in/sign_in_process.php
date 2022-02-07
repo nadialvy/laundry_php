@@ -2,7 +2,11 @@
     if($_POST){
         //koneksi
         include '../../../koneksi.php';
+        // var_dump($_POST["remember"]); die();
 
+        if(isset($_POST["remember"])){
+            echo "Hi"; die();
+        }
         //get data
         $username = $_POST["username"];
         $password = $_POST["password"];
@@ -18,13 +22,14 @@
             $data = mysqli_fetch_assoc($result);
             $checkPass = password_verify($password, $data["password"]);
             if( $checkPass ){
-                    //set session
-                    session_start();
-                    $_SESSION["login"] = true;
-                    $_SESSION["username"] = $username;
-                    $_SESSION["role"] = $data["role"];
-                    
-                    header("Location: ../index.php");
+                
+                //set session
+                session_start();
+                $_SESSION["login"] = true;
+                $_SESSION["username"] = $username;
+                $_SESSION["role"] = $data["role"];
+    
+                header("Location: ../index.php");
             } else {
                 echo "
                 <script>

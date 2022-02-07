@@ -66,11 +66,24 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-type">Type</label>
-                                        <select class="form-control" name='type' value="<?= $data["type"]; ?>" >
-                                            <option value="kilo">Kilo</option>
-                                            <option value="blanket">Blanket</option>
-                                            <option value="bed cover">Bed-Cover</option>
-                                            <option value="t-shirt">T-Shirt</option>
+                                        <select class="form-control" name='type'>
+                                        <?php
+                                                $arr_type = array(
+                                                    'kilo' => 'kilo',
+                                                    'blanket' => 'blanket',
+                                                    'bed cover' => 'bed cover',
+                                                    't-shirt' => 't-shirt' 
+                                                );
+                                        ?>
+                                        <?php foreach($arr_type as $key => $value) :
+                                            $sel = "";
+                                            if($key == $data["type"]){
+                                                $sel = 'selected';
+                                            }
+                                            echo "<option value='". $key ."' ".$sel.">" .$value ."</option>";  // displaying data in option menu
+                                        ?>
+                                        <?php endforeach ?>
+                                        
                                         </select>
                                     </div>
                                 </div>

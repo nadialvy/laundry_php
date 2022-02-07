@@ -84,7 +84,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-phone">Phone</label>
-                                        <input name="phone" id="input-phone" class="form-control" type="text" required>
+                                        <input name="phone" id="input-phone" class="form-control" type="text" required placeholder="Use +62 format">
                                     </div>
                                 </div>
                             </div>

@@ -5,6 +5,7 @@
     header("Location: ../index.php");
     exit;
   }
+
 ?>
 
 <!DOCTYPE html>
@@ -78,33 +79,16 @@
                     required
                   />
                 </div>
-                  <!-- <div class="custom-control custom-control-alternative custom-checkbox">
-                    <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
-                    <label class="custom-control-label" for=" customCheckLogin">
-                      <span class="text-muted">Remember me</span>
-                    </label>
-                  </div>
-                  <div>
-                    <input type="checkbox" id="pass_toggle" onclick="ShowOrHide()" style="display: inline;">
-                    <script>
-                      function ShowOrHide() {
-                        var x = document.getElementById("InputPassword");
-                        if (x.type === "password") {
-                          x.type = "text";
-                        } else {
-                          x.type = "password";
-                        }
-                      }
-                    </script>
-                    <label for="pass_toggle">Show Password</label>
-                  </div>
-                </div> -->
                 
                 <div class="ud-form-group">
                   <button type="submit" class="ud-main-btn w-100">Sign In</button>
                 </div>
               </form>
-
+              
+              <div class="ud-form-group">
+                  <input type="checkbox" name="remember" id="remember"/>Remember me
+                  <!-- <p style="display: inline;" for="remember"></p> -->
+                </div>
               <p>Dont have account? <a href="../sign_up/sign_up.php" class="registration">Register Now!</a> </p>
 
             </div>

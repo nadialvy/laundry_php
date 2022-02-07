@@ -17,7 +17,7 @@
                   WHERE id = '$id' ";
         $datas = mysqli_query($conn, $query);
         $data = mysqli_fetch_assoc($datas);
-        
+        // var_dump($data); die();   
     }
    
 
@@ -121,20 +121,21 @@
                                         <label class="form-control-label" for="input-status">Status</label>
                                         <select class="form-control" name='status'>
                                             <?php
-                                                include "../../../koneksi.php";  
-                                                $recordsStatus = mysqli_query($conn, "SELECT status FROM transaction WHERE id = '$id'");  
-                                                $status = mysqli_fetch_array($recordsStatus);
-
-                                                $selectedStats = "";
-                                                if($status['status'] == $data['id_member']){
-                                                    $selectedStats = 'selected';
+                                                $arr_status = array(
+                                                    'new' => 'new',
+                                                    'process' => 'process', 
+                                                    'done' => 'done',
+                                                    'taken'=> 'taken' 
+                                                );
+                                            ?>
+                                            <?php foreach($arr_status as $key => $value) :
+                                                $sel = "";
+                                                if($key == $data["status"]){
+                                                    $sel = 'selected';
                                                 }
-                                                echo "<option value='". $status['status'] ."' ".$selectedStats.">" .$status['status'] ."</option>"; 	
-                                            ?> 
-                                            <option value="new">New</option>
-                                            <option value="process">Process</option>
-                                            <option value="done">Done</option>
-                                            <option value="taken">Taken</option>
+                                                echo "<option value='". $key ."' ".$sel.">" .$value ."</option>";  // displaying data in option menu
+                                            ?>
+                                            <?php endforeach ?>
                                         </select>
                                     </div>
                                 </div>
@@ -144,20 +145,21 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-paid">Paid</label>
-                                        <select class="form-control" name='paid' value="<?= $data["paid"]; ?>">
-                                            <?php
-                                                include "../../../koneksi.php";  
-                                                $recordsPaid = mysqli_query($conn, "SELECT paid FROM transaction WHERE id = '$id'");  
-                                                $paid = mysqli_fetch_array($recordsPaid);
-
-                                                $selectedPaid = "";
-                                                if($paid['paid'] == $data['id_member']){
-                                                    $selectedPaid= 'selected';
-                                                }
-                                                echo "<option value='". $paid['paid'] ."' ".$selectedPaid.">" .$paid['paid'] ."</option>"; 	
-                                            ?>
-                                            <option value="paid">Paid</option>
-                                            <option value="not yet">Not yet</option>
+                                        <select class="form-control" name='paid'>
+                                        <?php
+                                                $arr_paid = array(
+                                                    'paid' => 'paid',
+                                                    'not yet' => 'not yet' 
+                                                );
+                                        ?>
+                                        <?php foreach($arr_paid as $key => $value) :
+                                            $sel = "";
+                                            if($key == $data["paid"]){
+                                                $sel = 'selected';
+                                            }
+                                            echo "<option value='". $key ."' ".$sel.">" .$value ."</option>";  // displaying data in option menu
+                                        ?>
+                                        <?php endforeach ?>
                                         </select>
                                     </div>
                                 </div>
@@ -178,6 +180,7 @@
                                                     if($user['id'] == $data['id_user']){
                                                         $selectedUser = 'selected';
                                                     }
+
                                                     echo "<option value='". $user['id'] ."' ".$selectedUser.">" .$user['name'] ."</option>";  // displaying data in option menu
                                                 }	
                                             ?> 

@@ -15,8 +15,6 @@
   include 'sidenav.php';
 ?>
 
-
-  
   <!-- Main content -->
   <?php 
     include 'member/member_show.php';
